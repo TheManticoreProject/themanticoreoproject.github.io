@@ -1,0 +1,9 @@
+name = "Manticore"
+license = "MIT"
+licenselink = "https://github.com/TheManticoreProject/themanticoreoproject.github.io/blob/main/LICENSE"
+description = "A dark, modern Hugo theme for The Manticore Project"
+min_version = "0.120.0"
+
+[author]
+  name = "The Manticore Project"
+  homepage = "https://github.com/TheManticoreProject"

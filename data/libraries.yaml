@@ -1,0 +1,75 @@
+- name: "Manticore"
+  description: "A cross platform library to write offensive and defensive security tools in Go"
+  longDescription: "The Manticore library serves as the foundation for building robust security tools in Go. It provides common functionality, utilities, and patterns that enable rapid development of cross-platform security applications."
+  icon: "shield"
+  stars: 131
+  githubUrl: "https://github.com/TheManticoreProject/Manticore"
+  features:
+    - "Cross-platform compatibility"
+    - "Common security tool patterns"
+    - "Robust error handling"
+    - "Extensive logging capabilities"
+    - "Modular architecture"
+    - "Well-documented APIs"
+  useCases:
+    - "Building offensive security tools"
+    - "Developing defensive security applications"
+    - "Creating security automation scripts"
+    - "Rapid prototyping of security concepts"
+
+- name: "winacl"
+  description: "A cross platform Go library to work with Windows Security Descriptors"
+  longDescription: "winacl provides comprehensive functionality for working with Windows Access Control Lists and Security Descriptors. Essential for any security tool that needs to analyze or manipulate Windows permissions."
+  icon: "package"
+  stars: 40
+  githubUrl: "https://github.com/TheManticoreProject/winacl"
+  features:
+    - "Security Descriptor parsing"
+    - "ACL manipulation capabilities"
+    - "SID handling and conversion"
+    - "Permission analysis tools"
+    - "Cross-platform Windows security"
+    - "Comprehensive documentation"
+  useCases:
+    - "Windows security analysis"
+    - "Permission auditing tools"
+    - "Access control management"
+    - "Security compliance checking"
+
+- name: "gopengraph"
+  description: "A Go library to create BloodHound OpenGraphs easily"
+  longDescription: "gopengraph simplifies the creation of BloodHound-compatible opengraph data in Go applications. It provides a clean API for building graph structures that can be ingested by BloodHound for Active Directory attack path analysis."
+  icon: "git-branch"
+  stars: 13
+  githubUrl: "https://github.com/TheManticoreProject/gopengraph"
+  features:
+    - "BloodHound opengraph format support"
+    - "Clean Go API"
+    - "Node and edge creation"
+    - "JSON export capabilities"
+    - "Type-safe graph building"
+    - "Comprehensive documentation"
+  useCases:
+    - "BloodHound data collectors"
+    - "Active Directory graph analysis"
+    - "Custom security data visualization"
+    - "Attack path modeling"
+
+- name: "goopts"
+  description: "A cross platform Go library to parse arguments given in command line to a program"
+  longDescription: "goopts provides a clean and intuitive way to handle command-line arguments in Go applications. It supports complex argument parsing scenarios while maintaining simplicity and ease of use."
+  icon: "terminal"
+  stars: 11
+  githubUrl: "https://github.com/TheManticoreProject/goopts"
+  features:
+    - "Intuitive argument parsing"
+    - "Support for flags and options"
+    - "Automatic help generation"
+    - "Type-safe argument handling"
+    - "Subcommand support"
+    - "Validation and error handling"
+  useCases:
+    - "Command-line tool development"
+    - "Security script automation"
+    - "System administration tools"
+    - "DevOps utilities"

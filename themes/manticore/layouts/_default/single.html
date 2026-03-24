@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="container" style="padding-top: 2rem;">
+  <div class="blog-single">
+    <a href="{{ .Parent.RelPermalink }}" class="back-link">
+      {{ partial "icons.html" "arrow-left" }}
+      Back
+    </a>
+    <article>
+      <h1>{{ .Title }}</h1>
+      <div class="blog-meta">
+        {{ partial "icons.html" "calendar" }}
+        <span>{{ .Date.Format "January 2, 2006" }}</span>
+        {{ with .Params.author }}
+        <span style="margin: 0 0.5rem;">&bull;</span>
+        <span>By {{ . }}</span>
+        {{ end }}
+      </div>
+      {{ with .Params.image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" class="featured-image">
+      {{ end }}
+      <div class="article-content">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+</div>
+{{ end }}

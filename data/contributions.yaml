@@ -1,0 +1,35 @@
+- title: "Code Contributions"
+  description: "Help improve our tools and libraries by contributing code, fixing bugs, or adding new features."
+  icon: "code"
+  actions:
+    - "Submit pull requests"
+    - "Fix reported issues"
+    - "Add new features"
+    - "Improve documentation"
+
+- title: "Documentation"
+  description: "Help make our tools more accessible by improving documentation, writing tutorials, or creating guides."
+  icon: "book-open"
+  actions:
+    - "Write user guides"
+    - "Create tutorials"
+    - "Improve README files"
+    - "Translate documentation"
+
+- title: "Community Support"
+  description: "Help other community members by answering questions, providing support, and sharing knowledge."
+  icon: "help-circle"
+  actions:
+    - "Answer questions on Discord"
+    - "Help with troubleshooting"
+    - "Share best practices"
+    - "Mentor newcomers"
+
+- title: "Spread the Word"
+  description: "Help grow our community by sharing our tools, writing about them, or presenting at conferences."
+  icon: "heart"
+  actions:
+    - "Share on social media"
+    - "Write blog posts"
+    - "Present at conferences"
+    - "Create video content"

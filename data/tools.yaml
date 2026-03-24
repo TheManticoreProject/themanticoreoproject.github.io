@@ -1,0 +1,181 @@
+- name: "Delegations"
+  description: "A tool to work with all types of Kerberos delegations (unconstrained, constrained, and resource-based constrained delegations) in Active Directory"
+  longDescription: "The Delegations tool provides comprehensive capabilities for analyzing and working with Kerberos delegations in Active Directory environments. It supports all three types of delegations and helps security professionals identify potential attack vectors and misconfigurations."
+  icon: "key"
+  stars: 214
+  category: "ad-kerberos"
+  githubUrl: "https://github.com/TheManticoreProject/Delegations"
+  features:
+    - "Support for unconstrained delegations"
+    - "Constrained delegation analysis"
+    - "Resource-based constrained delegations"
+    - "Cross-platform compatibility"
+    - "Detailed reporting capabilities"
+
+- name: "FindGPPPasswords"
+  description: "A cross-platform tool to find and decrypt Group Policy Preferences passwords from the SYSVOL share using low-privileged domain accounts"
+  longDescription: "FindGPPPasswords helps identify and decrypt passwords stored in Group Policy Preferences, a common security misconfiguration that can lead to privilege escalation in Active Directory environments."
+  icon: "lock"
+  stars: 170
+  category: "ad-kerberos"
+  githubUrl: "https://github.com/TheManticoreProject/FindGPPPasswords"
+  features:
+    - "Automated SYSVOL scanning"
+    - "Password decryption capabilities"
+    - "Low-privilege operation"
+    - "Multiple output formats"
+    - "Cross-platform support"
+
+- name: "LDAPWordlistHarvester"
+  description: "A tool that allows you to extract a client-specific wordlist from the LDAP of an Active Directory"
+  longDescription: "LDAPWordlistHarvester connects to Active Directory via LDAP and extracts meaningful strings from object attributes to build a targeted wordlist. Useful for password auditing and security assessments."
+  icon: "book-open"
+  stars: 58
+  category: "recon"
+  githubUrl: "https://github.com/TheManticoreProject/LDAPWordlistHarvester"
+  features:
+    - "LDAP-based attribute extraction"
+    - "Client-specific wordlist generation"
+    - "Multiple attribute support"
+    - "Cross-platform compatibility"
+    - "Customizable output formats"
+
+- name: "DescribeNTSecurityDescriptor"
+  description: "A cross-platform tool to parse and describe the contents of a raw ntSecurityDescriptor structure"
+  longDescription: "This tool helps security researchers and administrators understand Windows security descriptors by parsing and presenting the information in a human-readable format. Essential for analyzing Windows security configurations."
+  icon: "file-text"
+  stars: 48
+  category: "security-descriptors"
+  githubUrl: "https://github.com/TheManticoreProject/DescribeNTSecurityDescriptor"
+  features:
+    - "Parse raw ntSecurityDescriptor structures"
+    - "Human-readable output format"
+    - "Cross-platform support"
+    - "Detailed ACL analysis"
+    - "Export capabilities"
+
+- name: "FindOldSIDTraces"
+  description: "A cross-platform tool to find traces of old SIDs remaining in LDAP objects of the Active Directory"
+  longDescription: "FindOldSIDTraces scans Active Directory LDAP objects for remnants of old Security Identifiers that may indicate previous migrations, trust relationships, or potential security issues."
+  icon: "search"
+  stars: 25
+  category: "security-descriptors"
+  githubUrl: "https://github.com/TheManticoreProject/FindOldSIDTraces"
+  features:
+    - "LDAP-based SID trace detection"
+    - "Old SID identification"
+    - "Migration artifact discovery"
+    - "Cross-platform compatibility"
+    - "Detailed reporting"
+
+- name: "goLAPS"
+  description: "A Go setter/getter for property ms-Mcs-AdmPwd used by LAPS"
+  longDescription: "goLAPS provides a simple interface for working with Microsoft LAPS (Local Administrator Password Solution) passwords, allowing administrators to retrieve and manage local administrator passwords programmatically."
+  icon: "settings"
+  stars: 17
+  category: "ad-kerberos"
+  githubUrl: "https://github.com/TheManticoreProject/goLAPS"
+  features:
+    - "LAPS password retrieval"
+    - "Password setting capabilities"
+    - "Active Directory integration"
+    - "Secure password handling"
+    - "Cross-platform support"
+
+- name: "SIDTool"
+  description: "A cross-platform tool to work with Security Identifiers (SID) formats"
+  longDescription: "SIDTool provides comprehensive functionality for analyzing, converting, and working with Windows Security Identifiers. Essential for understanding Windows security principals and access control."
+  icon: "user-check"
+  stars: 15
+  category: "security-descriptors"
+  githubUrl: "https://github.com/TheManticoreProject/SIDTool"
+  features:
+    - "SID parsing and analysis"
+    - "Multiple SID format support"
+    - "Conversion between formats"
+    - "Security principal identification"
+    - "Bulk SID processing"
+
+- name: "keytab"
+  description: "A cross platform tool to work with keytab files used by Kerberos to store authentication information"
+  longDescription: "The keytab tool provides comprehensive functionality for creating, reading, and manipulating Kerberos keytab files. Essential for managing Kerberos authentication in enterprise environments."
+  icon: "database"
+  stars: 10
+  category: "ad-kerberos"
+  githubUrl: "https://github.com/TheManticoreProject/keytab"
+  features:
+    - "Keytab file creation and modification"
+    - "Multiple encryption type support"
+    - "Cross-platform compatibility"
+    - "Detailed keytab analysis"
+    - "Security validation checks"
+
+- name: "FindReusedKeyCredentials"
+  description: "A cross-platform tool to find reused key credentials on multiple objects in Active Directory"
+  longDescription: "FindReusedKeyCredentials scans Active Directory for objects sharing the same key credentials, which could indicate misconfiguration or potential security issues with certificate-based authentication."
+  icon: "fingerprint"
+  stars: 9
+  category: "ad-kerberos"
+  githubUrl: "https://github.com/TheManticoreProject/FindReusedKeyCredentials"
+  features:
+    - "Key credential reuse detection"
+    - "Active Directory scanning"
+    - "Cross-platform compatibility"
+    - "Detailed reporting"
+    - "LDAP-based analysis"
+
+- name: "DescribeKeyCredentialLink"
+  description: "A cross-platform tool to parse and describe the contents of a raw msDS-KeyCredentialLink data blob"
+  longDescription: "DescribeKeyCredentialLink parses the msDS-KeyCredentialLink attribute used in Windows Hello for Business and certificate-based authentication, presenting its contents in a human-readable format."
+  icon: "link2"
+  stars: 3
+  category: "security-descriptors"
+  githubUrl: "https://github.com/TheManticoreProject/DescribeKeyCredentialLink"
+  features:
+    - "KeyCredentialLink blob parsing"
+    - "Human-readable output"
+    - "Certificate information extraction"
+    - "Cross-platform support"
+    - "Detailed structure analysis"
+
+- name: "KeyCredentialHound"
+  description: "A cross-platform BloodHound opengraph collector for KeyCredentials of Active Directory objects using LDAP"
+  longDescription: "KeyCredentialHound collects KeyCredential information from Active Directory objects via LDAP and outputs BloodHound-compatible opengraph data for visualization and analysis."
+  icon: "shield"
+  stars: 1
+  category: "ad-kerberos"
+  githubUrl: "https://github.com/TheManticoreProject/KeyCredentialHound"
+  features:
+    - "BloodHound opengraph output"
+    - "LDAP-based collection"
+    - "KeyCredential analysis"
+    - "Cross-platform compatibility"
+    - "Active Directory integration"
+
+- name: "ExtractAS400LickeysFromDisk"
+  description: "A cross-platform tool to parse and extract licence keys from disk images of IBM AS/400, iSeries and Power Systems"
+  longDescription: "ExtractAS400LickeysFromDisk parses disk images from IBM AS/400, iSeries, and Power Systems to locate and extract stored licence keys, useful for inventory management and system recovery."
+  icon: "server"
+  stars: 1
+  category: "other"
+  githubUrl: "https://github.com/TheManticoreProject/ExtractAS400LickeysFromDisk"
+  features:
+    - "IBM AS/400 disk image parsing"
+    - "iSeries and Power Systems support"
+    - "Licence key extraction"
+    - "Cross-platform compatibility"
+    - "Multiple image format support"
+
+- name: "ComputeSIDFromServiceName"
+  description: "A cross-platform tool to compute the value of a Windows Security Identifier (SID) from a service name"
+  longDescription: "ComputeSIDFromServiceName calculates the Security Identifier (SID) that Windows assigns to a given service, useful for understanding service account permissions and security configurations."
+  icon: "user-check"
+  stars: 0
+  category: "security-descriptors"
+  githubUrl: "https://github.com/TheManticoreProject/ComputeSIDFromServiceName"
+  features:
+    - "SID computation from service names"
+    - "Windows service SID lookup"
+    - "Cross-platform compatibility"
+    - "Batch processing support"
+    - "Human-readable output"

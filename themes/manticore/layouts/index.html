@@ -1,0 +1,173 @@
+{{ define "main" }}
+
+{{/* ===== Hero ===== */}}
+<section class="hero">
+  <div>
+    <img src="{{ "logo.png" | relURL }}" alt="The Manticore Project" class="hero-logo">
+    <h1>The Manticore Project</h1>
+    <p class="lead">{{ .Site.Params.description }}</p>
+    <p class="sublead">{{ .Site.Params.longDescription }}</p>
+  </div>
+  <div class="hero-buttons">
+    <a href="/tools/" class="btn btn-primary btn-lg">
+      Explore Tools
+      {{ partial "icons.html" "arrow-right" }}
+    </a>
+    <a href="/community/" class="btn btn-outline btn-lg">Join Community</a>
+  </div>
+</section>
+
+{{/* ===== Features ===== */}}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why The Manticore Project</h2>
+      <p>Built by security professionals, for security professionals.</p>
+    </div>
+    <div class="features-grid">
+      {{ range .Site.Data.features }}
+      <div class="card feature-card">
+        <div class="card-header">
+          {{ partial "icons.html" .icon }}
+          <h3>{{ .name }}</h3>
+        </div>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ===== Tools Preview ===== */}}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Security Tools</h2>
+      <p>Comprehensive offensive and defensive security tools built by the community, for the community.</p>
+    </div>
+    <div class="grid-3" style="max-width: 72rem; margin: 0 auto;">
+      {{ range first 6 .Site.Data.tools }}
+      <a href="{{ .githubUrl }}" target="_blank" rel="noopener noreferrer" class="card card-hoverable tool-card" style="display: block;">
+        <div class="card-header">
+          {{ partial "icons.html" .icon }}
+          <div class="tool-name">
+            <h3>{{ .name }}</h3>
+          </div>
+          {{ if gt .stars 0 }}
+          <span class="stars">
+            {{ partial "icons.html" "star" }}
+            {{ .stars }}
+          </span>
+          {{ end }}
+          <span class="external-link-icon">{{ partial "icons.html" "external-link" }}</span>
+        </div>
+        <p>{{ .description }}</p>
+      </a>
+      {{ end }}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/tools/" class="view-all-link">
+        View all {{ len .Site.Data.tools }} tools
+        {{ partial "icons.html" "external-link" }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{{/* ===== Libraries Preview ===== */}}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Libraries</h2>
+      <p>Foundational libraries that power our security tools and enable rapid development.</p>
+    </div>
+    <div class="grid-4" style="max-width: 64rem; margin: 0 auto;">
+      {{ range .Site.Data.libraries }}
+      <a href="{{ .githubUrl }}" target="_blank" rel="noopener noreferrer" class="card card-hoverable library-card" style="display: block;">
+        {{ partial "icons.html" .icon }}
+        <h3>{{ .name }}</h3>
+        <p>{{ .description }}</p>
+        <span class="stars" style="justify-content: center;">
+          {{ partial "icons.html" "star" }}
+          {{ .stars }}
+        </span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ===== Blog Preview ===== */}}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Security Blog</h2>
+      <p>Latest insights, tutorials, and research from The Manticore Project community.</p>
+    </div>
+    {{ $posts := where .Site.RegularPages "Section" "blog" }}
+    {{ if $posts }}
+    <div class="grid-3" style="max-width: 72rem; margin: 0 auto;">
+      {{ range first 3 $posts }}
+      <a href="{{ .RelPermalink }}" class="card card-hoverable blog-card" style="display: block;">
+        <div class="blog-body">
+          <div class="blog-meta">
+            {{ partial "icons.html" "calendar" }}
+            <span>{{ .Date.Format "January 2, 2006" }}</span>
+          </div>
+          <h3>{{ .Title }}</h3>
+          <p class="excerpt">{{ .Description }}</p>
+          <span class="read-more">
+            Read more {{ partial "icons.html" "arrow-right" }}
+          </span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/blog/" class="btn btn-outline btn-lg">View All Articles</a>
+    </div>
+    {{ else }}
+    <div class="text-center" style="padding: 3rem 0;">
+      <p style="color: var(--text-60);">No articles available yet. Check back soon!</p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{/* ===== Community Preview ===== */}}
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Join Our Community</h2>
+      <p>Connect with security researchers and developers from around the world.</p>
+    </div>
+    <div class="grid-3" style="max-width: 56rem; margin: 0 auto;">
+      {{ range .Site.Data.social }}
+      <a href="{{ .url }}" target="_blank" rel="noreferrer" class="card community-card" style="display: block;">
+        <div class="card-header">
+          {{ partial "icons.html" .icon }}
+          <div>
+            <h3>{{ .name }}</h3>
+            <p class="desc">{{ .description }}</p>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ===== CTA ===== */}}
+<section class="cta-section">
+  <h2>Ready to contribute to security?</h2>
+  <p>Join our collective of Go developers and security researchers. Together, we can build tools that strengthen the security posture of the entire community.</p>
+  <div class="cta-buttons">
+    <a href="{{ .Site.Params.githubOrg }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+      Start Contributing
+      {{ partial "icons.html" "arrow-right" }}
+    </a>
+    <a href="/libraries/" class="btn btn-outline btn-lg">View Libraries</a>
+  </div>
+</section>
+
+{{ end }}

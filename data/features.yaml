@@ -1,0 +1,15 @@
+- name: "Written in Go"
+  description: "All tools are built in Go for high performance, easy compilation, and single-binary distribution."
+  icon: "code"
+
+- name: "Cross-Platform"
+  description: "Every tool works on Windows, Linux, and macOS, ensuring compatibility with your environment."
+  icon: "globe"
+
+- name: "Active Directory Focused"
+  description: "Deep expertise in Active Directory security: Kerberos, LDAP, ACLs, GPOs, and more."
+  icon: "shield"
+
+- name: "Open Source"
+  description: "All tools are free and open source, allowing full transparency, auditing, and community contributions."
+  icon: "unlock"

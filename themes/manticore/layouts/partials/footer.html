@@ -1,0 +1,55 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h2>The Manticore Project</h2>
+      <p>Crowdsourced open source security tools for the community.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h3>Tools</h3>
+        <ul>
+          <li><a href="/tools/">Security Tools</a></li>
+          <li><a href="/libraries/">Libraries</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="{{ .Site.Params.githubOrg }}" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="{{ .Site.Params.discord }}" target="_blank" rel="noopener noreferrer">Discord</a></li>
+          <li><a href="{{ .Site.Params.reddit }}" target="_blank" rel="noopener noreferrer">Reddit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <div class="footer-social">
+          <a href="{{ .Site.Params.githubOrg }}" target="_blank" rel="noopener noreferrer">
+            {{ partial "icons.html" "github" }}
+            <span class="sr-only">GitHub</span>
+          </a>
+          <a href="{{ .Site.Params.discord }}" target="_blank" rel="noopener noreferrer">
+            {{ partial "icons.html" "message-circle" }}
+            <span class="sr-only">Discord</span>
+          </a>
+          <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">
+            {{ partial "icons.html" "linkedin" }}
+            <span class="sr-only">LinkedIn</span>
+          </a>
+          <a href="{{ .Site.Params.youtube }}" target="_blank" rel="noopener noreferrer">
+            {{ partial "icons.html" "youtube" }}
+            <span class="sr-only">YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {{ now.Year }} The Manticore Project. Open source security tools for the community.</p>
+  </div>
+</footer>

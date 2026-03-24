@@ -1,0 +1,81 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-header">
+    <h1>Security Tools</h1>
+    <p>Comprehensive offensive and defensive security tools built by the community, for the community. All tools are open source and cross-platform compatible.</p>
+  </div>
+
+  {{/* Category Filters */}}
+  <div class="category-filters" id="category-filters">
+    <button class="category-btn active" data-category="all" onclick="filterTools('all', this)">All Tools</button>
+    <button class="category-btn" data-category="ad-kerberos" onclick="filterTools('ad-kerberos', this)">Active Directory &amp; Kerberos</button>
+    <button class="category-btn" data-category="security-descriptors" onclick="filterTools('security-descriptors', this)">Security Descriptors &amp; SIDs</button>
+    <button class="category-btn" data-category="recon" onclick="filterTools('recon', this)">Reconnaissance</button>
+    <button class="category-btn" data-category="other" onclick="filterTools('other', this)">Other</button>
+  </div>
+
+  <div class="grid-3" id="tools-grid" style="max-width: 72rem; margin: 0 auto;">
+    {{ range .Site.Data.tools }}
+    <div class="card tool-detail-card" data-category="{{ .category }}">
+      <div class="card-header">
+        {{ partial "icons.html" .icon }}
+        <h2 style="font-size: 1.5rem;">{{ .name }}</h2>
+        {{ if gt .stars 0 }}
+        <span class="stars" style="margin-left: auto;">
+          {{ partial "icons.html" "star" }}
+          {{ .stars }}
+        </span>
+        {{ end }}
+      </div>
+      <p class="long-desc">{{ .longDescription }}</p>
+      {{ with .features }}
+      <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">Key Features:</h3>
+      <ul class="feature-list">
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      <div class="tool-actions">
+        <a href="{{ .githubUrl }}" target="_blank" rel="noopener noreferrer">
+          <span class="btn btn-primary" style="width: 100%;">
+            {{ partial "icons.html" "github" }}
+            View on GitHub
+          </span>
+        </a>
+        <a href="{{ .githubUrl }}/releases" target="_blank" rel="noopener noreferrer">
+          <span class="btn btn-outline" style="width: 100%;">
+            {{ partial "icons.html" "download" }}
+            Download
+          </span>
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  {{/* CTA Banner */}}
+  <div class="card cta-banner">
+    <h2>Contribute to The Manticore Project</h2>
+    <p>Help us build better security tools for the community. Contribute code, report issues, or suggest new features.</p>
+    <a href="{{ .Site.Params.githubOrg }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+      {{ partial "icons.html" "github" }}
+      Contribute on GitHub
+    </a>
+  </div>
+</div>
+
+<script>
+function filterTools(category, btn) {
+  document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#tools-grid .card').forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+{{ end }}

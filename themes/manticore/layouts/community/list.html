@@ -1,0 +1,104 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-header">
+    <h1>Join Our Community</h1>
+    <p>Connect with security researchers, developers, and enthusiasts from around the world. Together, we're building the future of open source security tools.</p>
+  </div>
+
+  {{/* Community Stats */}}
+  <div class="stats-grid">
+    <div class="card stat-card">
+      <div class="stat-number">17</div>
+      <div class="stat-label">Public Repositories</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-number">13</div>
+      <div class="stat-label">Security Tools</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-number">4</div>
+      <div class="stat-label">Go Libraries</div>
+    </div>
+  </div>
+
+  {{/* Social Platforms */}}
+  <h2 style="font-size: 1.875rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Connect With Us</h2>
+  <div class="grid-3" style="margin-bottom: 4rem;">
+    {{ range .Site.Data.community }}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="card community-detail-card" style="display: block;">
+      <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+        <div class="icon-badge" style="background: {{ .color }};">
+          {{ partial "icons.html" .icon }}
+        </div>
+        <div style="flex: 1;">
+          <h3>{{ .name }}</h3>
+          <p class="stats-text">{{ .stats }}</p>
+        </div>
+      </div>
+      <p class="long-desc">{{ .longDescription }}</p>
+      <span class="go-link">{{ .description }} &rarr;</span>
+    </a>
+    {{ end }}
+  </div>
+
+  {{/* Ways to Contribute */}}
+  <h2 style="font-size: 1.875rem; font-weight: 700; text-align: center; margin-bottom: 2rem;">Ways to Contribute</h2>
+  <div class="grid-2" style="margin-bottom: 4rem;">
+    {{ range .Site.Data.contributions }}
+    <div class="card contrib-card">
+      <div class="card-header">
+        {{ partial "icons.html" .icon }}
+        <h3>{{ .title }}</h3>
+      </div>
+      <p>{{ .description }}</p>
+      <ul>
+        {{ range .actions }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+
+  {{/* Community Guidelines */}}
+  <div class="card guidelines-card">
+    <h2>Community Guidelines</h2>
+    <div class="two-col-grid">
+      <div>
+        <h3>Our Values</h3>
+        <ul>
+          <li><span class="dot-green"></span><span><strong>Respect:</strong> Treat all community members with respect and kindness</span></li>
+          <li><span class="dot-green"></span><span><strong>Collaboration:</strong> Work together to build better security tools</span></li>
+          <li><span class="dot-green"></span><span><strong>Learning:</strong> Share knowledge and help others grow</span></li>
+          <li><span class="dot-green"></span><span><strong>Ethics:</strong> Use our tools responsibly and ethically</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Code of Conduct</h3>
+        <ul>
+          <li><span class="dot-blue"></span><span>Be welcoming to newcomers and help them get started</span></li>
+          <li><span class="dot-blue"></span><span>Provide constructive feedback and criticism</span></li>
+          <li><span class="dot-blue"></span><span>Respect different perspectives and experiences</span></li>
+          <li><span class="dot-blue"></span><span>Report any inappropriate behavior to moderators</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {{/* CTA */}}
+  <div class="text-center" style="padding: 4rem 0;">
+    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Ready to Get Involved?</h2>
+    <p style="color: var(--text-80); max-width: 42rem; margin: 0 auto 2rem;">Join our community today and start contributing to the future of open source security tools.</p>
+    <div class="cta-buttons">
+      <a href="{{ .Site.Params.discord }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+        {{ partial "icons.html" "message-circle" }}
+        Join Discord
+      </a>
+      <a href="{{ .Site.Params.githubOrg }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+        {{ partial "icons.html" "github" }}
+        Contribute on GitHub
+      </a>
+    </div>
+  </div>
+</div>
+{{ end }}

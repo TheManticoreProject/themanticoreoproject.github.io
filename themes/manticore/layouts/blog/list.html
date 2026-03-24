@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-header">
+    <h1>Security Blog</h1>
+    <p>Latest insights, tutorials, and research from The Manticore Project community. Stay updated with the latest in cybersecurity tools and techniques.</p>
+  </div>
+
+  {{ $posts := .Pages }}
+  {{ if $posts }}
+
+  {{/* Featured Post */}}
+  {{ with index $posts 0 }}
+  <div class="featured-post">
+    <h2>Featured Article</h2>
+    <a href="{{ .RelPermalink }}" style="display: block;">
+      <div class="card featured-post-card">
+        <div class="featured-post-inner">
+          <div class="featured-post-body" style="width: 100%;">
+            <div class="blog-meta">
+              {{ partial "icons.html" "calendar" }}
+              <span>{{ .Date.Format "January 2, 2006" }}</span>
+              {{ with .Params.author }}
+              <span style="margin: 0 0.5rem;">&bull;</span>
+              <span>By {{ . }}</span>
+              {{ end }}
+            </div>
+            <h3>{{ .Title }}</h3>
+            <p class="excerpt">{{ .Description }}</p>
+            <span class="read-more">
+              Read full article {{ partial "icons.html" "arrow-right" }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {{ end }}
+
+  {{/* Remaining Posts */}}
+  {{ if gt (len $posts) 1 }}
+  <div class="mb-8">
+    <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;">More Articles</h2>
+    <div class="grid-3">
+      {{ range after 1 $posts }}
+      <a href="{{ .RelPermalink }}" class="card card-hoverable blog-card" style="display: block;">
+        {{ with .Params.image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" class="blog-image">
+        {{ end }}
+        <div class="blog-body">
+          <div class="blog-meta">
+            {{ partial "icons.html" "calendar" }}
+            <span>{{ .Date.Format "January 2, 2006" }}</span>
+          </div>
+          <h3>{{ .Title }}</h3>
+          <p class="excerpt">{{ .Description }}</p>
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            {{ with .Params.author }}<span style="color: var(--text-60); font-size: 0.875rem;">By {{ . }}</span>{{ end }}
+            <span class="read-more">
+              Read more {{ partial "icons.html" "arrow-right" }}
+            </span>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{ else }}
+  <div class="empty-state">
+    {{ partial "icons.html" "search" }}
+    <h3>No articles yet</h3>
+    <p>No articles available yet. Check back soon for the latest security insights and tutorials!</p>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

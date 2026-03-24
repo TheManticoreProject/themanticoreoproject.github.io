@@ -1,0 +1,84 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-header">
+    <h1>Security Libraries</h1>
+    <p>Foundational libraries that power our security tools and enable rapid development of cross-platform security applications in Go.</p>
+  </div>
+
+  <div style="max-width: 72rem; margin: 0 auto;">
+    {{ range .Site.Data.libraries }}
+    <div class="card library-detail-card">
+      <div class="library-detail-header">
+        <div class="lib-info">
+          {{ partial "icons.html" .icon }}
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <h2>{{ .name }}</h2>
+              <span class="stars">
+                {{ partial "icons.html" "star" }}
+                {{ .stars }}
+              </span>
+            </div>
+            <p>{{ .description }}</p>
+          </div>
+        </div>
+        <div class="lib-actions">
+          <a href="{{ .githubUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            {{ partial "icons.html" "github" }}
+            GitHub
+          </a>
+          <a href="{{ .githubUrl }}#readme" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            {{ partial "icons.html" "book-open" }}
+            Docs
+          </a>
+        </div>
+      </div>
+
+      <div class="library-detail-body">
+        <p>{{ .longDescription }}</p>
+
+        <div class="two-col-grid">
+          <div>
+            <h3>{{ partial "icons.html" "code" }} Key Features</h3>
+            <ul>
+              {{ range .features }}
+              <li><span class="dot-blue"></span>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+          <div>
+            <h3>{{ partial "icons.html" "shield" }} Use Cases</h3>
+            <ul>
+              {{ range .useCases }}
+              <li><span class="dot-green"></span>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+
+        <div class="install-block">
+          <h4>Installation:</h4>
+          <code>go get github.com/TheManticoreProject/{{ lower .name }}</code>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  {{/* Getting Started */}}
+  <div class="card cta-banner" style="max-width: 72rem; margin: 4rem auto 0;">
+    <h2>Start Building with Our Libraries</h2>
+    <p>Our libraries are designed to work together seamlessly. Start with the Manticore core library and add additional functionality as needed.</p>
+    <div class="cta-buttons">
+      <a href="{{ .Site.Params.githubOrg }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+        {{ partial "icons.html" "github" }}
+        Browse All Libraries
+      </a>
+      <a href="/tools/" class="btn btn-outline btn-lg">
+        {{ partial "icons.html" "shield" }}
+        See Tools Built With These
+      </a>
+    </div>
+  </div>
+</div>
+{{ end }}

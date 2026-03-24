@@ -1,0 +1,29 @@
+- name: "GitHub"
+  description: "Code and development"
+  url: "https://github.com/TheManticoreProject"
+  icon: "github"
+
+- name: "Discord"
+  description: "Community and discussion"
+  url: "https://discord.gg/TVmVFCp7ky"
+  icon: "message-circle"
+
+- name: "LinkedIn"
+  description: "General information and announcements"
+  url: "https://www.linkedin.com/company/themanticoreproject/"
+  icon: "linkedin"
+
+- name: "YouTube"
+  description: "Tutorials and demonstrations"
+  url: "https://www.youtube.com/@The-Manticore-Project"
+  icon: "youtube"
+
+- name: "Website"
+  description: "Official project website"
+  url: "https://themanticoreproject.com/"
+  icon: "globe"
+
+- name: "Reddit"
+  description: "Community discussions"
+  url: "https://www.reddit.com/r/TheManticoreProject/"
+  icon: "users"
