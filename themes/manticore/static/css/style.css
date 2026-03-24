@@ -872,7 +872,7 @@ img { max-width: 100%; height: auto; }
 
 /* ===== Blog Single Page ===== */
 .blog-single {
-  max-width: 48rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding-bottom: 4rem;
 }
