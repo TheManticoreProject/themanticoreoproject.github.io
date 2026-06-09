@@ -10,6 +10,8 @@
       {{ range .Site.Menus.main }}
       <a href="{{ .URL }}">{{ .Name }}</a>
       {{ end }}
+      <a href="{{ .Site.Params.githubOrg }}" target="_blank" rel="noreferrer" class="mobile-only">GitHub</a>
+      <a href="{{ .Site.Params.discord }}" target="_blank" rel="noreferrer" class="mobile-only">Discord</a>
     </nav>
 
     <div class="navbar-actions">

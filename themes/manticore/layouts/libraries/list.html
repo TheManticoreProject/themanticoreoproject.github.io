@@ -58,7 +58,7 @@
 
         <div class="install-block">
           <h4>Installation:</h4>
-          <code>go get github.com/TheManticoreProject/{{ lower .name }}</code>
+          <code>go get {{ replace .githubUrl "https://" "" }}</code>
         </div>
       </div>
     </div>

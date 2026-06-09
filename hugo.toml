@@ -1,4 +1,4 @@
-baseURL = "https://themanticoreproject.github.io/"
+baseURL = "https://themanticoreproject.com/"
 languageCode = "en-us"
 title = "The Manticore Project"
 theme = "manticore"

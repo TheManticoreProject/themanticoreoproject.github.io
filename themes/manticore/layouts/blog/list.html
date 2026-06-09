@@ -43,8 +43,8 @@
     <div class="grid-3">
       {{ range after 1 $posts }}
       <a href="{{ .RelPermalink }}" class="card card-hoverable blog-card" style="display: block;">
-        {{ with .Params.image }}
-        <img src="{{ . }}" alt="{{ $.Title }}" class="blog-image">
+        {{ if .Params.image }}
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-image">
         {{ end }}
         <div class="blog-body">
           <div class="blog-meta">
