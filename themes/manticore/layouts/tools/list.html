@@ -38,7 +38,7 @@
             {{ if gt .stars 0 }}
             <span class="star-badge">
               {{ partial "icons.html" "star" }}
-              {{ .stars }}
+              <span data-github-stars="{{ .githubUrl }}">{{ .stars }}</span>
             </span>
             {{ end }}
           </span>

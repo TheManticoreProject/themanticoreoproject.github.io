@@ -6,6 +6,7 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <script defer src="{{ "js/stars.js" | relURL }}"></script>
   {{ template "_internal/opengraph.html" . }}
   {{ hugo.Generator }}
 </head>

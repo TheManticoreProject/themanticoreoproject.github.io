@@ -56,7 +56,7 @@
           {{ if gt .stars 0 }}
           <span class="stars">
             {{ partial "icons.html" "star" }}
-            {{ .stars }}
+            <span data-github-stars="{{ .githubUrl }}">{{ .stars }}</span>
           </span>
           {{ end }}
           <span class="external-link-icon">{{ partial "icons.html" "external-link" }}</span>
@@ -89,7 +89,7 @@
         <p>{{ .description }}</p>
         <span class="stars" style="justify-content: center;">
           {{ partial "icons.html" "star" }}
-          {{ .stars }}
+          <span data-github-stars="{{ .githubUrl }}">{{ .stars }}</span>
         </span>
       </a>
       {{ end }}
