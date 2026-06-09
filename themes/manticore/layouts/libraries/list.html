@@ -12,13 +12,7 @@
         <div class="lib-info">
           {{ partial "icons.html" .icon }}
           <div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <h2>{{ .name }}</h2>
-              <span class="stars">
-                {{ partial "icons.html" "star" }}
-                {{ .stars }}
-              </span>
-            </div>
+            <h2>{{ .name }}</h2>
             <p>{{ .description }}</p>
           </div>
         </div>
@@ -26,6 +20,12 @@
           <a href="{{ .githubUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             {{ partial "icons.html" "github" }}
             GitHub
+            {{ if gt .stars 0 }}
+            <span class="star-badge">
+              {{ partial "icons.html" "star" }}
+              {{ .stars }}
+            </span>
+            {{ end }}
           </a>
           <a href="{{ .githubUrl }}#readme" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
             {{ partial "icons.html" "book-open" }}

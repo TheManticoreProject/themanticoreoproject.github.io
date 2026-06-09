@@ -20,12 +20,6 @@
       <div class="card-header">
         {{ partial "icons.html" .icon }}
         <h2 style="font-size: 1.5rem;">{{ .name }}</h2>
-        {{ if gt .stars 0 }}
-        <span class="stars" style="margin-left: auto;">
-          {{ partial "icons.html" "star" }}
-          {{ .stars }}
-        </span>
-        {{ end }}
       </div>
       <p class="long-desc">{{ .longDescription }}</p>
       {{ with .features }}
@@ -41,6 +35,12 @@
           <span class="btn btn-primary" style="width: 100%;">
             {{ partial "icons.html" "github" }}
             View on GitHub
+            {{ if gt .stars 0 }}
+            <span class="star-badge">
+              {{ partial "icons.html" "star" }}
+              {{ .stars }}
+            </span>
+            {{ end }}
           </span>
         </a>
         <a href="{{ .githubUrl }}/releases" target="_blank" rel="noopener noreferrer">
